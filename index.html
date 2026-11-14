@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Appointment Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <img src="./images/pawcare-header.png"
+         alt="PawCare Logo"
+         class="header-logo">
+        <h1>🐾 PawCare Appointment Portal</h1>
+        <p>Connect with Vets, Groomers, and Pet Trainers Easily</p>
+        _____________________________________________________________________________________________
+        <nav>
+            <a href="#profile-section">Pet Profile</a>
+            <a href="#services-section">Available Services</a>
+            <a href="#booking-section">Book Appointment</a>
+            <a href="#dashboard-section">Service History & Admin</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Pet Profile Management -->
+        <section id="profile-section" class="card">
+            <h2>1. Create Pet Profile</h2>
+            <form id="petForm">
+                <label>Owner Name:</label>
+                <input type="text" id="ownerName" placeholder="Enter your name" required>
+
+                <label>Pet Name:</label>
+                <input type="text" id="petName" placeholder="e.g., Bruno" required>
+
+                <label>Pet Type:</label>
+                <select id="petType">
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Bird">Bird</option>
+                </select>
+
+                <label>Pet Age (Years):</label>
+                <input type="number" id="petAge" placeholder="e.g., 2" required>
+
+                <button type="submit">Save Pet Profile</button>
+            </form>
+            <div id="savedProfileDisplay" class="info-box">
+                No pet profile saved yet.
+            </div>
+        </section>
+
+        <!-- 2. Service Listings & Provider Profiles -->
+        <section id="services-section" class="card">
+            <h2>2. Available Services & Providers</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>🩺 Veterinary Checkup</h3>
+                    <p><strong>Provider:</strong> Dr. Sharma (Vet Specialist)</p>
+                    <p><strong>Timing:</strong> 10:00 AM - 4:00 PM</p>
+                    <p><strong>Fee:</strong> ₹500</p>
+                </div>
+                <div class="service-item">
+                    <h3>✂️ Pet Grooming & Bath</h3>
+                    <p><strong>Provider:</strong> Happy Paws Studio</p>
+                    <p><strong>Timing:</strong> 11:00 AM - 6:00 PM</p>
+                    <p><strong>Fee:</strong> ₹800</p>
+                </div>
+                <div class="service-item">
+                    <h3>🎾 Obedience Training</h3>
+                    <p><strong>Provider:</strong> Rahul Verma (Certified Trainer)</p>
+                    <p><strong>Timing:</strong> 9:00 AM - 1:00 PM</p>
+                    <p><strong>Fee:</strong> ₹1000</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Appointment Booking -->
+        <section id="booking-section" class="card">
+            <h2>3. Book an Appointment</h2>
+            <form id="bookingForm">
+                <label>Pet Name:</label>
+                <input type="text" id="bookPetName" placeholder="Enter pet name" required>
+
+                <label>Select Service & Provider:</label>
+                <select id="serviceSelect">
+                    <option value="Vet Checkup - Dr. Sharma">Vet Checkup - Dr. Sharma (₹500)</option>
+                    <option value="Pet Grooming - Happy Paws">Pet Grooming - Happy Paws (₹800)</option>
+                    <option value="Training - Rahul Verma">Training - Rahul Verma (₹1000)</option>
+                </select>
+
+                <label>Select Date:</label>
+                <input type="date" id="bookDate" required>
+
+                <label>Select Time Slot:</label>
+                <select id="bookTime">
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                </select>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+            <p id="notificationMsg" class="notification"></p>
+        </section>
+
+        <!-- 4. Service History & Admin Dashboard -->
+        <section id="dashboard-section" class="card">
+            <h2>4. Appointment History & Provider Dashboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pet Name</th>
+                        <th>Service & Provider</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Admin Action</th>
+                    </tr>
+                </thead>
+                <tbody id="appointmentList">
+                    <!-- JavaScript will add rows here -->
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
